@@ -3,7 +3,7 @@ import time
 import csv
 import json
 from bs4 import BeautifulSoup, NavigableString, Tag
-from datetime import datetime
+from datetime import datetime, timedelta
 from urllib.parse import urljoin
 import os
 import sys
@@ -233,6 +233,16 @@ def scrape_hwz_thread(base_url, start_page, end_page, date_start_str, date_end_s
                         if ls_tag:
                             last_seen = ls_tag.find_next("dd").get_text(strip=True)
                         
+                        # <-- Add normalization here
+                        # Normalize "Last seen" to only date
+                        if last_seen.startswith("Today"):
+                            last_seen = datetime.now().strftime("%Y-%m-%d")
+                        elif last_seen.startswith("Yesterday"):
+                            last_seen = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+                        else:
+                            # Optional: for other formats, just keep the date part (before first space or "at")
+                            last_seen = last_seen.split()[0]
+
                         # Points are in the memberTooltip-stats section
                         pt_tag = u_soup.find("dt", title="Trophy points")
                         if pt_tag:

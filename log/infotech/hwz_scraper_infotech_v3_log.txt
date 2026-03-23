@@ -4,8 +4,8 @@ Found 23 thread blocks on this page.
 🧵 Thread: DIY PC Rig Recommendations For 2025 → https://forums.hardwarezone.com.sg/threads/diy-pc-rig-recommendations-for-2025.6852056/
 🧵 Thread: Which Graphics card to buy in Y2026 → https://forums.hardwarezone.com.sg/threads/which-graphics-card-to-buy-in-y2026.1233319/
 🧵 Thread: Revised HWC Guidelines (Read before you post. Warnings/infractions may be issued for not following) → https://forums.hardwarezone.com.sg/threads/revised-hwc-guidelines-read-before-you-post-warnings-infractions-may-be-issued-for-not-following.3572478/
-🧵 Thread: All the great Lazada sale events here! (Strictly no referral link) - Part 6 → https://forums.hardwarezone.com.sg/threads/all-the-great-lazada-sale-events-here-strictly-no-referral-link-part-6.6352392/
 🧵 Thread: [SUMMARY] Gaming Monitor Recommendations → https://forums.hardwarezone.com.sg/threads/summary-gaming-monitor-recommendations.6342454/
+🧵 Thread: Upgrade of GPU → https://forums.hardwarezone.com.sg/threads/upgrade-of-gpu.7194333/
 
 === Scraping thread: DIY PC Rig Recommendations For 2025 ===
 Fetching: https://forums.hardwarezone.com.sg/threads/diy-pc-rig-recommendations-for-2025.6852056/
@@ -44,10 +44,12 @@ Skipped post outside date: 2013-01-16
 Skipped post outside date: 2013-01-18
 Skipped post outside date: 2015-01-21
 
-=== Scraping thread: All the great Lazada sale events here! (Strictly no referral link) - Part 6 ===
-Fetching: https://forums.hardwarezone.com.sg/threads/all-the-great-lazada-sale-events-here-strictly-no-referral-link-part-6.6352392/
-
 === Scraping thread: [SUMMARY] Gaming Monitor Recommendations ===
 Fetching: https://forums.hardwarezone.com.sg/threads/summary-gaming-monitor-recommendations.6342454/
-✅ Done. 60 posts saved.
-⏱️ Execution time: 2 min 35.63 sec
+
+=== Scraping thread: Upgrade of GPU ===
+Fetching: https://forums.hardwarezone.com.sg/threads/upgrade-of-gpu.7194333/
+Skipped post outside date: 2026-03-18
+Skipped post outside date: 2026-03-18
+✅ Done. 40 posts saved.
+⏱️ Execution time: 2 min 5.06 sec

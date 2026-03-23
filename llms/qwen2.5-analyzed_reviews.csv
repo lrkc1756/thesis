@@ -1,0 +1,101 @@
+﻿package_id,review_id,cid,url,title,text,label,sentiment
+01,ptt_30_1,ptt_30_c1,,,都說了，就別執著了。而且也沒意義，吃不了那麼高。,real,neutral
+01,ptt_30_2,ptt_30_c2,,,走PD3.2，可能只有17PRO能吃滿也說不定，當專用即可,unrelated,neutral
+01,ptt_30_3,ptt_30_c3,,,#1emPiow4 (MobileComm),1emPiow4,neutral
+01,ptt_30_4,ptt_30_c4,,,typec懂的都懂,unrelated,neutral
+01,ptt_30_5,ptt_30_c5,,,我上個月買Google Pixel Flex 67W雙C充電頭 支援AVS,real,neutral
+01,ptt_30_6,ptt_30_c6,,,https://reurl.cc/7VL655 比Apple的實用很多,real,positive
+01,ptt_30_7,ptt_30_c7,,,可以同時充MacBook+iPhone/iPad/AirPods ...,real,neutral
+01,ptt_30_8,ptt_30_c8,,,最新PD3.2協議 SPR AVS  台達代工的,unrelated,neutral
+01,ptt_30_9,ptt_30_c9,,,等I 17ProMax/i17基本款寄來就測一下峰值/平均功率溫度,unrelated,neutral
+01,ptt_30_10,ptt_30_c10,,,為啥我買67w副廠頭從30%充怎麼都只跑16~18w 50%之後降,fake(misinformation),negative
+01,ptt_30_11,ptt_30_c11,,,iPhone 17除外 其他之前出的都只支援固定壓PD 電池越小,unrelated,neutral
+01,ptt_30_12,ptt_30_c12,,,功率越低,unrelated,neutral
+01,ptt_30_13,ptt_30_c13,,,就算是16ProMax穩定峰值功率也不過27~28W,real,neutral
+01,ptt_30_14,ptt_30_c14,,,完整充滿要兩個多小時 充電溫度也不低 平均功能十幾瓦,real,neutral
+01,ptt_30_15,ptt_30_c15,,,平均功率*,unrelated,neutral
+01,ptt_30_16,ptt_30_c16,,,i16PM PD15v https://i.imgur.com/6VVCUT1.jpeg,unrelated,neutral
+01,ptt_30_17,ptt_30_c17,,,功率越充越低正常喔 手機發熱也是降功率,real,neutral
+01,ptt_30_18,ptt_30_c18,,,80%以上慢慢涓流,unrelated,neutral
+01,ptt_30_19,ptt_30_c19,,,Google那顆看起來不錯耶,unrelated,positive
+01,ptt_30_20,ptt_30_c20,,,gray介紹的Pixel Flex 67W充電器看起來很讚,real,positive
+01,ptt_30_21,ptt_30_c21,,,*gary,,
+01,ptt_30_22,ptt_30_c22,,,50%之後12-14w在充 反正副廠跟原廠30%開充差10分鐘左右滿,real,neutral
+01,ptt_30_23,ptt_30_c23,,,1個半小時滿電 大差不差，iphone 16,real,neutral
+01,ptt_30_24,ptt_30_c24,,,15/16 Pro最大只能25W，偶爾能上26W但撐不到一秒就降下去,fake(misinformation),neutral
+01,ptt_30_25,ptt_30_c25,,,了,unrelated,neutral
+01,ptt_30_26,ptt_30_c26,,,PD3.2反正是學***的PPS，45W只有低電量充電才能看的到,fake(misinformation),neutral
+01,ptt_30_27,ptt_30_c27,,,https://i.imgur.com/UrDK0G1.jpeg,unrelated,neutral
+01,ptt_30_28,ptt_30_c28,,,還有別被數字給騙了，45W跟25W充飽，只差一分鍾,fake(misinformation),neutral
+01,ptt_30_29,ptt_30_c29,,,不要到時候充壞新iPhone蘋果不鳥你保固就好,fake(misinformation),negative
+01,ptt_30_30,ptt_30_c30,,,如果手機能被充壞 100%是手機的問題,real,neutral
+01,ptt_30_31,ptt_30_c31,,,拿不符合USB IF認證的爛充電頭跟爛線充壞手機平板確實,real,negative
+01,ptt_30_32,ptt_30_c32,,,算冷筍吧www,unrelated,neutral
+01,ptt_30_33,ptt_30_c33,,,手邊各種線跟充電器 https://i.imgur.com/e0fmyx8.png,unrelated,neutral
+01,ptt_30_34,ptt_30_c34,,,舊款就走普通的PD協議吧，吃不到40W但還是可以快充,real,negative
+01,ptt_30_35,ptt_30_c35,,,https://i.imgur.com/W9fRIwq.jpeg,unrelated,neutral
+01,ptt_30_36,ptt_30_c36,,,17/17ProMax 等寄來後會測看看w,unrelated,neutral
+01,ptt_30_37,ptt_30_c37,,,@sincere77 固定壓檔位PD就效率低發熱大啊,real,neutral
+01,ptt_30_38,ptt_30_c38,,,不然為什麼Google,unrelated,neutral
+01,ptt_30_39,ptt_30_c39,,,Pixel跟三星Galaxy 系列還有對岸支援公版協議高功率快,unrelated,neutral
+01,ptt_30_40,ptt_30_c40,,,充的都要用PD-PPS,unrelated,neutral
+01,ptt_30_41,ptt_30_c41,,,https://i.imgur.com/R1hC7sd.jpeg,unrelated,neutral
+01,ptt_30_42,ptt_30_c42,,,用檢測儀測最準 https://i.imgur.com/hqzUOM3.jpeg,real,neutral
+01,ptt_30_43,ptt_30_c43,,,PD3.2 SPR AVS 的動態調壓可以自己Google查技術細節,PD3.2 SPR AVS 的動態調壓,neutral
+01,ptt_30_44,ptt_30_c44,,,延長線上的usbc充電孔充的到45w嗎,real,neutral
+01,ptt_30_45,ptt_30_c45,,,連動態調壓功能都沒有USB-C充電器就別想了...,real,negative
+01,ptt_30_46,ptt_30_c46,,,延長線上面的USB-C 能PD9V 20W固定壓的就不錯了...,real,positive
+01,ptt_30_47,ptt_30_c47,,,#1elspu7O (Key_Mou_Pad) 鍵鼠板這聊線的跟你們講的有關,unrelated,neutral
+01,ptt_30_48,ptt_30_c48,,,係嗎? 聊電聊協議看的霧煞煞,unrelated,neutral
+01,ptt_31_50,ptt_31_c1,,,網路上有很多開箱了，這個是beats新出的應該沒人用,unrelated,neutral
+01,ptt_31_51,ptt_31_c2,,,過,unrelated,neutral
+01,ptt_31_52,ptt_31_c3,,,https://youtu.be/cso-5CIeH2U 這次的techwoven,unrelated,neutral
+01,ptt_31_53,ptt_31_c4,,,https://reurl.cc/axAbAl,unrelated,neutral
+01,ptt_31_54,ptt_31_c5,,,我有買17 pro的，晚上來開箱,unrelated,neutral
+01,ptt_31_55,ptt_31_c6,,,卡一個開箱,unrelated,neutral
+01,ptt_31_56,ptt_31_c7,,,期待開箱,unrelated,neutral
+01,ptt_32_58,ptt_32_c1,,,放過它換一隻新的吧,unrelated,negative
+01,ptt_32_59,ptt_32_c2,,,手機救星(新莊中誠)先打電話問問看,unrelated,neutral
+01,ptt_33_61,ptt_33_c1,,,官方trade in比較阿莎力 但回收價就低一點 其他管道回收價,real,neutral
+01,ptt_33_62,ptt_33_c2,,,格雖然高但容易被刁一些小地方去砍價 對自己手機狀態有信,real,neutral
+01,ptt_33_63,ptt_33_c3,,,心可以試試看其他管道 懶或是有一些刮傷直接官方比較省事,unrelated,neutral
+01,ptt_33_64,ptt_33_c4,,,可說官方給的也是 禮物卡,fake(misinformation),neutral
+01,ptt_33_65,ptt_33_c5,,,官方我怎麼是匯款到戶頭，禮物卡是單純回收才給的？,unrelated,neutral
+01,ptt_33_66,ptt_33_c6,,,我不久前才舊換新mac mini的，他是錢直接給到我戶頭耶,real,positive
+01,ptt_33_67,ptt_33_c7,,,連蝦皮無人店，也有AI蘋果手機回收機器,fake(misinformation),neutral
+01,ptt_33_68,ptt_33_c8,,,還是說不同產品線做法不同,unrelated,neutral
+01,ptt_33_69,ptt_33_c9,,,蝦皮蘋果回收機，是掃描手機外觀初步判斷，再進一步,real,neutral
+01,ptt_33_70,ptt_33_c10,,,測試其他硬體是否有問題，最後估價、回收動作,unrelated,neutral
+01,ptt_33_71,ptt_33_c11,,,我都拿去轉轉回收,unrelated,neutral
+01,ptt_33_72,ptt_33_c12,,,借樓問，現在i15 pm不知道哪間價格最好,unrelated,neutral
+01,ptt_33_73,ptt_33_c13,,,我本來想把16PM賣了，覺得比價麻煩，之後打算送給家人用,unrelated,neutral
+01,ptt_33_74,ptt_33_c14,,,ＸＤ,unrelated,neutral
+01,ptt_33_75,ptt_33_c15,,,之前14PM是裸機用，用磕碰痕跡m，就選官方Trade in了,unrelated,neutral
+01,ptt_33_76,ptt_33_c16,,,有磕碰痕跡和螢幕刮痕*,real,neutral
+01,ptt_33_77,ptt_33_c17,,,二手回收我只推薦轉轉 不過其實愛回收價格比較高,real,neutral
+01,ptt_33_78,ptt_33_c18,,,全家,unrelated,neutral
+01,ptt_33_79,ptt_33_c19,,,全家和轉轉（蝦皮）在app試過報價（非現場），全家比較,unrelated,neutral
+01,ptt_33_80,ptt_33_c20,,,高23000,高2300ml,neutral
+01,ptt_33_81,ptt_33_c21,,,其實要賣你只要用官方回收價賣，幾乎不會有人挑你毛病XD,real,neutral
+01,ptt_33_82,ptt_33_c22,,,畢竟你大可以直接丟回官方，當然送家人，家人更開心,unrelated,positive
+01,ptt_33_83,ptt_33_c23,,,流程短可以直接拿現金肯定是最受歡迎的,real,positive
+01,ptt_33_84,ptt_33_c24,,,畢竟都換新機了舊機只想早點處理掉省得礙眼,real,neutral
+01,ptt_33_85,ptt_33_c25,,,自上一隻賣人被百般刁難後 我這次就打算給蘋果回收了 都賣,fake(misinformation),negative
+01,ptt_33_86,ptt_33_c26,,,的跟回收價差不多了 還被嫌充電口有刮痕嫌喇叭好像破破的,real,negative
+01,ptt_33_87,ptt_33_c27,,,"我運氣挺好都沒有被買家刁難過(因為賣出幾乎都像新的),但我",real,neutral
+01,ptt_33_88,ptt_33_c28,,,這次也懶得賣 直接送trade-in了,unrelated,neutral
+01,ptt_33_89,ptt_33_c29,,,賣二手有用了半年才來跟你灰怎麼電量撐不過一天,fake(misinformation),negative
+01,ptt_33_90,ptt_33_c30,,,發現7 plus都沒人要回收了 QQ,unrelated,neutral
+01,ptt_33_91,ptt_33_c31,,,二手買家嫌，以後一律丟官方,fake(misinformation),negative
+01,ptt_33_92,ptt_33_c32,,,每年都賣Q哥或蘋果保衛站，pro128G都能賣2萬多,real,positive
+01,ptt_33_93,ptt_33_c33,,,賣一般人就怕遇到雞巴買家詐騙 真的丟trade in或是回收,fake(misinformation),negative
+01,ptt_33_94,ptt_33_c34,,,店家省事,unrelated,neutral
+01,ptt_33_95,ptt_33_c35,,,官方trade in的禮品卡可以單買apple care嗎？,unrelated,neutral
+01,ptt_33_96,ptt_33_c36,,,全家可以收到2萬7,fake(misinformation),positive
+01,ptt_33_97,ptt_33_c37,,,沒用過，全家是用他們的 app 嗎？,unrelated,neutral
+01,ptt_34_99,ptt_34_c1,,,iPad Pro 之後是256起跳嗎？ 16 g ram 20g ram,real,neutral
+01,ptt_34_100,ptt_34_c2,,,4TB,4TB,neutral
+01,ptt_34_101,ptt_34_c3,,,Mac 我猜 120hz起跳 iPad 有可能,unrelated,neutral
+01,ptt_34_102,ptt_34_c4,,,mini跟air有可能，ipad定位更低應該是繼續60,unrelated,neutral
+01,ptt_34_103,ptt_34_c5,,,17e我猜變成動態島然後MagSafe 單鏡頭快充,fake(misinformation),neutral
+01,ptt_34_104,ptt_34_c6,,,只有80,unrelated,neutral
