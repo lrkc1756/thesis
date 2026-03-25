@@ -7,6 +7,60 @@ from datetime import datetime, timedelta
 from urllib.parse import urljoin
 import os
 import sys
+import re
+
+def normalize_last_seen(last_seen):
+    now = datetime.now()
+
+    if last_seen.startswith("Today"):
+        return now.strftime("%Y-%m-%d")
+    elif last_seen.startswith("Yesterday"):
+        return (now - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    if re.search(r"(minute|hour)", last_seen, re.IGNORECASE):
+        return now.strftime("%Y-%m-%d")
+
+    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    for i, day in enumerate(weekdays):
+        if last_seen.startswith(day):
+            today_weekday = now.weekday()
+            diff = (today_weekday - i) % 7
+            diff = diff if diff != 0 else 7
+            return (now - timedelta(days=diff)).strftime("%Y-%m-%d")
+
+    months = {
+    "Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04",
+    "May": "05", "Jun": "06", "Jul": "07", "Aug": "08",
+    "Sep": "09", "Oct": "10", "Nov": "11", "Dec": "12"
+}
+
+    for m in months:
+        if last_seen.startswith(m):
+            parts = last_seen.replace(",", "").split()
+
+            month = months[parts[0]]
+
+            # Case 1: "Jan 5 2024"
+            if len(parts) >= 3 and parts[2].isdigit():
+                day = parts[1].zfill(2)
+                year = parts[2]
+                return f"{year}-{month}-{day}"
+
+            # Case 2: "Jan 2024"
+            elif len(parts) == 2 and parts[1].isdigit():
+                year = parts[1]
+                return f"{year}-{month}-01"
+
+            # Case 3: "Jan 5" (no year → use 2026)
+            elif len(parts) == 2:
+                day = parts[1].zfill(2)
+                return f"2026-{month}-{day}"
+
+            # Case 4: just "Jan"
+            else:
+                return f"2026-{month}-01"
+
+    return last_seen.split()[0]
 
 # Logging setup
 start_time = time.time()
@@ -235,13 +289,8 @@ def scrape_hwz_thread(base_url, start_page, end_page, date_start_str, date_end_s
                         
                         # <-- Add normalization here
                         # Normalize "Last seen" to only date
-                        if last_seen.startswith("Today"):
-                            last_seen = datetime.now().strftime("%Y-%m-%d")
-                        elif last_seen.startswith("Yesterday"):
-                            last_seen = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
-                        else:
-                            # Optional: for other formats, just keep the date part (before first space or "at")
-                            last_seen = last_seen.split()[0]
+                        if last_seen:
+                            last_seen = normalize_last_seen(last_seen)
 
                         # Points are in the memberTooltip-stats section
                         pt_tag = u_soup.find("dt", title="Trophy points")
