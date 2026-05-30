@@ -3,7 +3,7 @@ from sklearn.metrics import cohen_kappa_score
 
 # Load files
 human_df = pd.read_json("C:\SS2026\Thesis\package6_s24.jsonl", lines=True)
-llm_df = pd.read_csv("C:\SS2026\Thesis\package6_s24_llama_test4.csv")
+llm_df = pd.read_csv("C:\SS2026\Thesis\p6_s24_gemini-analyzed_reviews.csv")
 
 # Keep only needed columns
 human_df = human_df[["cid", "label"]]
