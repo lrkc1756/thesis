@@ -13,71 +13,103 @@ from sklearn.metrics import (
 )
 
 # ==========================================
-# 1. LOAD AND PREPARE DATA
+# 1. LOAD DATA
 # ==========================================
 
-print("Loading dataset...")
-
-df = pd.read_json("C:\\SS2026\\Thesis\\package6_s24_augmented_random1000 (3).jsonl", lines=True)
+df = pd.read_json(
+    r"C:\SS2026\Thesis\package6_augmented_random1000.jsonl",
+    lines=True
+)
 
 print("\nColumns:")
 print(df.columns)
 
-print("\nLabel distribution:")
-print(df["label"].value_counts())
+print("\nRaw label distribution:")
+print(df["label"].value_counts(dropna=False))
 
-# Remove rows with missing values
+# ==========================================
+# 2. CLEAN DATA
+# ==========================================
+
+# Drop missing values
 df = df.dropna(subset=["text", "label"])
 
-# Remove rows with missing text
-df = df.dropna(subset=["text"])
+# Clean label text
+df["label"] = (
+    df["label"]
+    .astype(str)
+    .str.lower()
+    .str.strip()
+)
 
-# Remove blank labels
-df = df[df["label"].astype(str).str.strip() != ""]
+# Remove empty labels
+df = df[df["label"] != ""]
 
-# Map labels to integers
+# Remove text inside parentheses (fake (misinformation) -> fake)
+df["label"] = df["label"].str.replace(r"\s*\(.*\)", "", regex=True)
+
+# Normalize whitespace
+df["label"] = df["label"].str.replace(r"\s+", " ", regex=True).str.strip()
+
+print("\nCleaned label distribution:")
+print(df["label"].value_counts())
+
+# ==========================================
+# 3. MAP LABELS
+# ==========================================
+
 label_mapping = {
     "fake": 0,
     "real": 1,
     "unrelated": 2
 }
 
+# Keep only valid labels
+df = df[df["label"].isin(label_mapping.keys())]
+
 df["encoded_label"] = df["label"].map(label_mapping)
 
-# Check for unmapped labels
+# Safety check
+print("\nEncoded label distribution:")
+print(df["encoded_label"].value_counts())
+
 if df["encoded_label"].isna().sum() > 0:
-    print("\nWARNING: Unmapped labels found:")
-    print(df[df["encoded_label"].isna()]["label"].unique())
-    raise ValueError("Some labels were not mapped.")
+    raise ValueError("Unmapped labels still exist!")
 
 X = df["text"]
 y = df["encoded_label"]
 
-print("\nEncoded label distribution:")
-print(y.value_counts())
-
 # ==========================================
-# 2. TRAIN / TEST SPLIT
+# 4. TRAIN / TEST SPLIT (SAFE)
 # ==========================================
 
-print("\nSplitting dataset...")
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.20,
-    random_state=42,
-    stratify=y
-)
+# If dataset too small, stratify can fail → fallback
+try:
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.20,
+        random_state=42,
+        stratify=y
+    )
+except ValueError:
+    print("Stratified split failed → using non-stratified split")
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.20,
+        random_state=42
+    )
 
 print(f"Training samples: {len(X_train)}")
 print(f"Test samples: {len(X_test)}")
 
-# ==========================================
-# 3. TF-IDF FEATURE EXTRACTION
-# ==========================================
+print("\nTest label distribution:")
+print(y_test.value_counts())
 
-print("\nExtracting TF-IDF features...")
+# ==========================================
+# 5. TF-IDF
+# ==========================================
 
 vectorizer = TfidfVectorizer(
     max_features=5000,
@@ -88,22 +120,15 @@ vectorizer = TfidfVectorizer(
 X_train_tfidf = vectorizer.fit_transform(X_train)
 X_test_tfidf = vectorizer.transform(X_test)
 
-print("TF-IDF matrix created.")
-
 # ==========================================
-# 4. SUPPORT VECTOR MACHINE
+# 6. SVM
 # ==========================================
 
 print("\n==============================")
-print("TRAINING LINEAR SVM")
+print("TRAINING SVM")
 print("==============================")
 
-svm_model = SVC(
-    kernel="linear",
-    C=1.0,
-    random_state=42
-)
-
+svm_model = SVC(kernel="linear", C=1.0, random_state=42)
 svm_model.fit(X_train_tfidf, y_train)
 
 svm_preds = svm_model.predict(X_test_tfidf)
@@ -119,12 +144,14 @@ print(
     classification_report(
         y_test,
         svm_preds,
-        target_names=["fake", "real", "unrelated"]
+        labels=[0, 1, 2],
+        target_names=["fake", "real", "unrelated"],
+        zero_division=0
     )
 )
 
 # ==========================================
-# 5. RANDOM FOREST
+# 7. RANDOM FOREST
 # ==========================================
 
 print("\n==============================")
@@ -151,16 +178,18 @@ print(
     classification_report(
         y_test,
         rf_preds,
-        target_names=["fake", "real", "unrelated"]
+        labels=[0, 1, 2],
+        target_names=["fake", "real", "unrelated"],
+        zero_division=0
     )
 )
 
 # ==========================================
-# 6. DBSCAN CLUSTERING
+# 8. DBSCAN (OPTIONAL / EXPERIMENTAL)
 # ==========================================
 
 print("\n==============================")
-print("RUNNING DBSCAN")
+print("DBSCAN")
 print("==============================")
 
 dbscan = DBSCAN(
@@ -171,14 +200,8 @@ dbscan = DBSCAN(
 
 cluster_labels = dbscan.fit_predict(X_test_tfidf)
 
-unique_clusters = np.unique(cluster_labels)
-
-num_clusters = len(unique_clusters)
-
-if -1 in unique_clusters:
-    num_clusters -= 1
-
-print(f"\nClusters found: {num_clusters}")
+print("\nClusters found:",
+      len(set(cluster_labels)) - (1 if -1 in cluster_labels else 0))
 
 print("\nCluster distribution:")
 print(pd.Series(cluster_labels).value_counts().sort_index())
